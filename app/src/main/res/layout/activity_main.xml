@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CEE9FE">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                app:civ_border_color="#AAAAAA"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/view_category_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_44sdp"
+                android:layout_toEndOf="@id/profile_image"
+                android:lines="1"
+                android:textStyle="bold"
+                android:textColor="#112D55"
+                android:textSize="@dimen/_16sdp"
+                tools:text="SmartChat" />
+
+            <TextView
+                android:id="@+id/create_group_bar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/search_bar"
+                android:layout_alignBottom="@+id/search_bar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="96dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/group"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/search_bar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="49dp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:background="@drawable/ic_search"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/exit_bar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/search_bar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/exit"
+                android:gravity="center"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_56sdp"
+        android:layout_marginBottom="@dimen/_56sdp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintTop_toBottomOf="@id/card" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#CEE9FE"
+        app:itemIconSize="@dimen/_22sdp"
+        app:itemIconTint="#112D55"
+        app:itemTextColor="#112D55"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

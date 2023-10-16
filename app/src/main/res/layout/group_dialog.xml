@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_12sdp"
+    app:cardCornerRadius="@dimen/_6sdp"
+    tools:context=".dialogs.NewGroupDialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="New group"
+            android:textColor="@color/darkBlue"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="write new group name"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="@color/darkBlue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/button_bg"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintStart_toEndOf="@+id/group_name"
+                app:layout_constraintTop_toBottomOf="@+id/group_name"
+                app:layout_constraintWidth_percent="0.2"
+                tools:text="Save" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

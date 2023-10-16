@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#216182"
+    tools:context=".activities.lock_app.SetPinActivity">
+
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="200dp"
+        android:padding="@dimen/_5sdp"
+        android:text="Set a 4-digit PIN:"
+        android:textColor="#E0F1F8"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/pinSetupEditText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pinSetupEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/instructionTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/tab_bg"
+        android:gravity="center"
+        android:hint="Enter new PIN"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/setupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinSetupEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="350dp"
+        android:backgroundTint="#E0F1F8"
+        android:text="Set PIN"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pinSetupEditText"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="@+id/instructionTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

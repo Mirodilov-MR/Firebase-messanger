@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "293867994617",
+    "firebase_url": "https://smartchat-3c7ce-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartchat-3c7ce",
+    "storage_bucket": "smartchat-3c7ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293867994617:android:a7998c632aaf83d2c7d128",
+        "android_client_info": {
+          "package_name": "com.example.firebase_messanger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFJ1DMB6ACUDMowusaOMA_s7Hw_gkZGrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

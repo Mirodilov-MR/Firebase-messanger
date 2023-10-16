@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#216182"
+    tools:context=".activities.lock_app.PinCodeActivity">
+
+    <EditText
+        android:id="@+id/pinEditText"
+        android:layout_width="206dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/tab_bg"
+        android:gravity="center"
+        android:hint="Enter PIN"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/unlockButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="350dp"
+        android:backgroundTint="#E0F1F8"
+        android:text="Unlock"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pinEditText"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/pinEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
