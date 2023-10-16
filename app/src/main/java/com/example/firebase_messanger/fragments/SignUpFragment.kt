@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -34,16 +35,6 @@ class SignUpFragment : Fragment() {
     private lateinit var referance: DatabaseReference
     private lateinit var dialog: LoadProgressDialog
     private var selectedPhotoUri: Uri? = null
-    private val randomImg = arrayOf(
-        "colors/color1.jpg",
-        "colors/color2.jpg",
-        "colors/color3.jpg",
-        "colors/color4.jpg",
-        "colors/color5.jpg",
-        "colors/color6.jpg",
-        "colors/color7.jpg"
-    )
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -146,11 +137,10 @@ class SignUpFragment : Fragment() {
                             dialog.loadDialog()
                             registerUser(fullName, email, password)
                         } else {
-
-                            Snackbar.make(
-                                binding.root,
-                                "You need to select an image",
-                                Snackbar.LENGTH_SHORT
+                            Toast.makeText(
+                                context,
+                                "You need upload photo, please click circle image!",
+                                Toast.LENGTH_LONG
                             ).show()
                         }
                     } else {

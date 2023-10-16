@@ -52,29 +52,9 @@ class SearchActivity : AppCompatActivity() {
         binding.userList.adapter = adapter
     }
 
-//    private fun searchUsers(query: String) {
-//        val filteredUsers = ArrayList<User>()
-//        reference.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                filteredUsers.clear()
-//                for (snapshot in dataSnapshot.children) {
-//                    val user = snapshot.getValue(User::class.java)
-//                    if (user != null && user.id != auth.currentUser?.uid) {
-//                        val fullName = user.userFullName?.toLowerCase(Locale.ROOT)
-//                        if (fullName != null && fullName.contains(query.toLowerCase(Locale.ROOT))) {
-//                            filteredUsers.add(user)
-//                        }
-//                    }
-//                }
-//                adapter.data(filteredUsers)
-//            }
-//            override fun onCancelled(error: DatabaseError) {}
-//        })
-//    }
-
     private fun searchUsers(query: String) {
         val filteredUsers = ArrayList<UserEntity>()
-        val filteredUsersData = ArrayList<User>()  // Create a list of User objects
+        val filteredUsersData = ArrayList<User>()
 
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -89,8 +69,7 @@ class SearchActivity : AppCompatActivity() {
                         }
                     }
                 }
-                adapter.data(filteredUsersData)  // Pass the list of User objects to the adapter
-                // Save the filtered users to the Room database
+                adapter.data(filteredUsersData)
                 GlobalScope.launch(Dispatchers.IO) {
                     MyApplication.database.userDao().insertUsers(filteredUsers)
 
@@ -101,4 +80,3 @@ class SearchActivity : AppCompatActivity() {
         })
     }
 }
-//saved users set to searcheduser recycleview

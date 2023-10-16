@@ -9,5 +9,5 @@ data class UserEntity(
     @PrimaryKey
     val id: String,
     val fullName: String,
-    // Add other fields as needed
+
 )

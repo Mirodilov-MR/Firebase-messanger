@@ -241,7 +241,6 @@ class UserMessagesActivity : AppCompatActivity(), PhotoPickerFragment.Callback {
         }
         PhotoPickerFragment.newInstance(
             multiple = true,
-            allowCamera = true,
             maxSelection = 1,
             theme = lv.chi.photopicker.R.style.ChiliPhotoPicker_Light
         ).show(supportFragmentManager, "picker")

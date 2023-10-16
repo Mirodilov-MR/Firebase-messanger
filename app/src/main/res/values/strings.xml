@@ -9,14 +9,13 @@
     <string name="and"> and </string>
     <string name="terms">Terms</string>
     <string name="sign_up">Sign Up</string>
-    <string name="sign_in">Sign In</string>
+    <string name="sign_in">Log In</string>
     <string name="all">Phone list</string>
     <string name="online_user">Online users</string>
     <string name="users">Users</string>
     <string name="fav">Favorites</string>
     <string name="your_profile">Your profile</string>
     <string name="message">Message</string>
-
     <string name="picker_select">Upload</string>
     <string name="account">Account</string>
     <plurals name="picker_selected_count" translatable="false">

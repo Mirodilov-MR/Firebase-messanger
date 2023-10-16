@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(registerBinding.root)
         adapter = SignInUpAdapter(supportFragmentManager)
         adapter!!.addPagerFragment(SignUpFragment(), "Sign Up")
-        adapter!!.addPagerFragment(SignInFragment(), "Sign In")
+        adapter!!.addPagerFragment(SignInFragment(), "Login In")
         registerBinding.viewPager.adapter = adapter
         registerBinding.tabLayout.setupWithViewPager(registerBinding.viewPager)
 
