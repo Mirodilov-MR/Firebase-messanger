@@ -19,7 +19,6 @@ import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import lv.chi.photopicker.PhotoPickerFragment
-import com.example.firebase_messanger.adapters.user.UserMessagesReadAdapter
 import com.example.firebase_messanger.databinding.ActivityUserMessagesBinding
 import com.example.firebase_messanger.loaders.GlideImageLoader
 import com.example.firebase_messanger.dialogs.LoadPickImageDialog
@@ -30,6 +29,7 @@ import java.io.File
 import java.io.IOException
 import java.util.*
 import com.example.firebase_messanger.R
+import com.example.firebase_messanger.adapters.user.UserMessagesReadAdapter
 import com.squareup.picasso.Picasso
 import lv.chi.photopicker.ChiliPhotoPicker
 import kotlin.collections.ArrayList

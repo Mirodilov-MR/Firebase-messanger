@@ -22,7 +22,7 @@
         android:padding="@dimen/_2sdp">
 
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/message_image_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
