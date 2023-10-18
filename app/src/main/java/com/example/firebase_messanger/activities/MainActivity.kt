@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemR
             newGroupDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             newGroupDialog.show()
         }
-        mainBinding.exitBar.setOnClickListener {
+        mainBinding.exitAccount.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, RegisterActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)

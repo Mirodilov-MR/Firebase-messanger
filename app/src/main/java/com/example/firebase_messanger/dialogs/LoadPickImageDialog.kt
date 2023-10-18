@@ -66,7 +66,6 @@ class LoadPickImageDialog(var context: Context) {
             Toast.makeText(context, "Failure uploaded", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
-
     }
 
     private fun sendMessage(user: User, message: String, fileName: String) {

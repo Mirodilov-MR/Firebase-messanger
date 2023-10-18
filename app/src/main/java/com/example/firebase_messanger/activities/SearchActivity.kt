@@ -53,9 +53,7 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun searchUsers(query: String) {
-        val filteredUsers = ArrayList<UserEntity>()
-        val filteredUsersData = ArrayList<User>()
-
+        val filteredUsers = ArrayList<User>()
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 filteredUsers.clear()
@@ -64,19 +62,40 @@ class SearchActivity : AppCompatActivity() {
                     if (user != null && user.id != auth.currentUser?.uid) {
                         val fullName = user.userFullName?.lowercase(Locale.ROOT)
                         if (fullName != null && fullName.contains(query.lowercase(Locale.ROOT))) {
-                            filteredUsers.add(UserEntity(user.id!!, user.userFullName!!))
-                            filteredUsersData.add(user)  // Add user to the list
+                            filteredUsers.add(user)
                         }
                     }
                 }
-                adapter.data(filteredUsersData)
-                GlobalScope.launch(Dispatchers.IO) {
-                    MyApplication.database.userDao().insertUsers(filteredUsers)
-
-                }
+                adapter.data(filteredUsers)
             }
-
             override fun onCancelled(error: DatabaseError) {}
         })
     }
+
+//    private fun searchUsers(query: String) {
+//        val filteredUsers = ArrayList<UserEntity>()
+//        val filteredUsersData = ArrayList<User>()
+//
+//        reference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                filteredUsers.clear()
+//                for (snapshot in dataSnapshot.children) {
+//                    val user = snapshot.getValue(User::class.java)
+//                    if (user != null && user.id != auth.currentUser?.uid) {
+//                        val fullName = user.userFullName?.lowercase(Locale.ROOT)
+//                        if (fullName != null && fullName.contains(query.lowercase(Locale.ROOT))) {
+//                            filteredUsers.add(UserEntity(user.id!!, user.userFullName!!))
+//                            filteredUsersData.add(user)  // Add user to the list
+//                        }
+//                    }
+//                }
+//                adapter.data(filteredUsersData)
+//                GlobalScope.launch(Dispatchers.IO) {
+//                    MyApplication.database.userDao().insertUsers(filteredUsers)
+//
+//                }
+//            }
+//            override fun onCancelled(error: DatabaseError) {}
+//        })
+//    }
 }

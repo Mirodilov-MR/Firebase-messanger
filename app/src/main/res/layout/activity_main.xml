@@ -84,7 +84,7 @@
                 android:textSize="@dimen/_16sdp" />
 
             <TextView
-                android:id="@+id/exit_bar"
+                android:id="@+id/exit_account"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignTop="@+id/search_bar"

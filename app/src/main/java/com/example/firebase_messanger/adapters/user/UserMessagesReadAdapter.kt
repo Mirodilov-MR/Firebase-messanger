@@ -87,9 +87,7 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
         fun bindData(userMessageModel: UserMessageModel) {
             binding1.userText.text = userMessageModel.message
             binding1.messageDate.text = userMessageModel.messageDate
-
-            // Load and set the Lottie animation for messageLink
-            setLottieAnimation(R.raw.animation, messageLinkAnimation)
+            setLottieAnimation(R.raw.anim, messageLinkAnimation)
 
             if (!userMessageModel.messageImageLink.equals("0")) {
                 binding1.constraint.minWidth = WindowManager.LayoutParams.MATCH_PARENT
@@ -116,8 +114,8 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
                 binding2.messageSendIcon.setBackgroundResource(R.drawable.ic_send_icon)
             }
 
-            // Load and set the Lottie animation for messageImageLink
-            setLottieAnimation(R.raw.animation, messageImageLinkAnimation)
+
+            setLottieAnimation(R.raw.anim, messageImageLinkAnimation)
 
             if (!userMessageModel.messageImageLink.equals("0")) {
                 binding2.constraint.minWidth = WindowManager.LayoutParams.MATCH_PARENT
@@ -129,7 +127,6 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
         }
     }
 
-    // Function to load and set a Lottie animation from the res/raw folder
     private fun setLottieAnimation(animationResId: Int, lottieView: LottieAnimationView) {
         val animationComposition = LottieCompositionFactory.fromRawRes(lottieView.context, animationResId)
             .addListener { composition: LottieComposition? ->
@@ -182,4 +179,3 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
         const val TYPE_SENDER = 1
     }
 }
-//put some lottie animation instead of icplaceholder

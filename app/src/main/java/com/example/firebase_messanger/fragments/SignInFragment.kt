@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -107,7 +108,12 @@ class SignInFragment : Fragment() {
                 } else {
                     dialog.dismissDialog()
                     view?.let {
-                        Snackbar.make(it, "Authentication failed", Snackbar.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            "Authentication failed, if you forgot password please tell to ADMIN",
+                            Toast.LENGTH_LONG
+                        ).show()
+
                     }
                 }
             }
