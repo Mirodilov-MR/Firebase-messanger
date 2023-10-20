@@ -36,6 +36,7 @@ class PinCodeActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else {
+
                 Toast.makeText(this@PinCodeActivity, "Incorrect PIN", Toast.LENGTH_SHORT).show()
             }
         }

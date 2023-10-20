@@ -44,4 +44,3 @@ class NewGroupDialog(context: Context) : AlertDialog(context) {
         }
     }
 }
-//i need create group chat, when user click createGroupBar programm open NewGroupDialog screen and user write group nama to edit text(id: group_name), and click btnSave, after clicked btnSave programm should create group and add all registered users to group, group should shown on MainActivity

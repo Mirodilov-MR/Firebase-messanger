@@ -16,30 +16,33 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     companion object {
-        const val SPLASH_TIME_OUT: Int = 400
+        const val SPLASH_TIME_OUT: Long = 400
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashBinding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(splashBinding.root)
-
         auth = Firebase.auth
-
     }
 
     override fun onStart() {
         super.onStart()
-        val user = auth.currentUser
-        Handler().postDelayed(Runnable {
-            if (user != null) {
-                val intent = Intent(this, PinCodeActivity::class.java)
-                startActivity(intent)
-            } else {
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
-            }
+        checkUserLoggedIn()
+    }
+
+    private fun checkUserLoggedIn() {
+        val currentUser = auth.currentUser
+
+        val intent = if (currentUser != null) {
+            Intent(this, PinCodeActivity::class.java)
+        } else {
+            Intent(this, RegisterActivity::class.java)
+        }
+
+        Handler().postDelayed({
+            startActivity(intent)
             finish()
-        }, SPLASH_TIME_OUT.toLong())
+        }, SPLASH_TIME_OUT)
     }
 }

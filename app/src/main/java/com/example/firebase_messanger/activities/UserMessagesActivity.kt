@@ -193,7 +193,6 @@ class UserMessagesActivity : AppCompatActivity(), PhotoPickerFragment.Callback {
                     userMessagesBinding.sendMessage.visibility = GONE
                 }
             }
-
         })
     }
 

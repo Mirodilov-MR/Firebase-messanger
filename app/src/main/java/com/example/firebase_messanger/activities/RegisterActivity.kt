@@ -21,7 +21,5 @@ class RegisterActivity : AppCompatActivity() {
         adapter!!.addPagerFragment(SignInFragment(), "Login In")
         registerBinding.viewPager.adapter = adapter
         registerBinding.tabLayout.setupWithViewPager(registerBinding.viewPager)
-
-
     }
 }
