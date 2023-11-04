@@ -87,7 +87,7 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
         fun bindData(userMessageModel: UserMessageModel) {
             binding1.userText.text = userMessageModel.message
             binding1.messageDate.text = userMessageModel.messageDate
-            setLottieAnimation(R.raw.anim, messageLinkAnimation)
+            setLottieAnimation(R.raw.animationblue, messageLinkAnimation)
 
             if (!userMessageModel.messageImageLink.equals("0")) {
                 binding1.constraint.minWidth = WindowManager.LayoutParams.MATCH_PARENT
@@ -115,7 +115,7 @@ class UserMessagesReadAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
             }
 
 
-            setLottieAnimation(R.raw.anim, messageImageLinkAnimation)
+            setLottieAnimation(R.raw.animationblue, messageImageLinkAnimation)
 
             if (!userMessageModel.messageImageLink.equals("0")) {
                 binding2.constraint.minWidth = WindowManager.LayoutParams.MATCH_PARENT
